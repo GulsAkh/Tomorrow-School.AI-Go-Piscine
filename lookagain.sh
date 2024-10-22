@@ -1,1 +1,1 @@
-find . -type f -name "*.sh" | sed 's|\.sh$||; s|^|./|' | sort -r
+find . -type f -name "*.sh" | awk -F/ '{print $NF}' | sort -r | sed 's|\.sh$||'
