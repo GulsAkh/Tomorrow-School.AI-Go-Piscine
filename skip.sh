@@ -1,1 +1,1 @@
-ls -l | awk 'NR % 2 == 1' && sed 'n;d'
+ls -l | awk 'NR == 1 || NR % 2 == 0'
