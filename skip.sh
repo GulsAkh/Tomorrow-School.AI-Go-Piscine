@@ -1,1 +1,1 @@
-ls -l | awk 'NR == 1 || (NR > 1 && FNR % 2 == 0)'
+find . | awk 'NR == 1 || (NR > 1 && FNR % 2 == 0)'
