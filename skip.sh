@@ -1,1 +1,1 @@
-echo (ls -l | awk 'NR == 1'; ls -l | sed '1d;n;d')
+(ls -l | awk 'NR == 1'; ls -l | sed '1d;n;d')
