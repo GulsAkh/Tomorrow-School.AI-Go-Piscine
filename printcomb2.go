@@ -1,4 +1,4 @@
-package piscine
+package main
 
 import "github.com/01-edu/z01"
 
@@ -6,7 +6,18 @@ func PrintComb2() {
 	for a := '0'; a <= '9'; a++ {
 		for b := '0'; b <= '9'; b++ {
 			for c := '0'; c <= '9'; c++ {
-				for d := b + 1; d <= '9'; d++ {
+				for d := '0'; d <= '9'; d++ {
+					if c > a || (a == c && b < d) {
+						z01.PrintRune(a)
+						z01.PrintRune(b)
+						z01.PrintRune(' ')
+						z01.PrintRune(c)
+						z01.PrintRune(d)
+						if !(a == '9' && b == '8' && c == '9' && d == '9') {
+							z01.PrintRune(',')
+							z01.PrintRune(' ')
+						}
+					}
 					// 00 01, 00 02, 00 03, 00 09 00 10 00 99,
 					// 01 02, 01 03, 01 04, ... 01 99,
 					// 02 03, 02 04, 02 05, ... 02 99,
@@ -18,19 +29,13 @@ func PrintComb2() {
 					// 08 09, 08 10, 08 11, ....08 99,
 					// 09 10, 09 11, 09 12, ....09 99,
 					// 10 11, 10 12, 10 13, ....10 99
-					z01.PrintRune(a)
-					z01.PrintRune(b)
-					z01.PrintRune(' ')
-					z01.PrintRune(c)
-					z01.PrintRune(d)
-
-					if !(a == '9' && b == '8' && c == '9' && d == '9') {
-						z01.PrintRune(',')
-						z01.PrintRune(' ')
-					}
 				}
 			}
 		}
 	}
 	z01.PrintRune('\n')
+}
+
+func main() {
+	PrintComb2()
 }
