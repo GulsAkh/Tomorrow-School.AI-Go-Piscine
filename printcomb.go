@@ -6,10 +6,10 @@ func PrintComb() {
 	for i := 0; i <= 7; i++ {
 		for x := i + 1; x <= 8; x++ {
 			for y := x + 1; y <= 9; y++ {
-				str := string('0'+rune(i)) + string('0'+rune(x)) + string('0'+rune(y))
-				for _, c := range str {
-					z01.PrintRune(c)
-				}
+				z01.PrintRune(int32(i) + '0')
+				z01.PrintRune(int32(x) + '0')
+				z01.PrintRune(int32(y) + '0')
+
 				if i < 7 || (i == 7 && x < 8) || (i == 7 && x == 8 && y < 9) {
 					z01.PrintRune(',')
 					z01.PrintRune(' ')
