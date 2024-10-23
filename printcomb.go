@@ -7,9 +7,14 @@ func PrintComb() {
 	for i = 0; i <= 7; i++ {
 		for x = i + 1; x <= 8; x++ {
 			for y = x + 1; y <= 9; y++ {
-				z01.PrintRune((rune(i) + 48))
-				z01.PrintRune((rune(x) + 48))
-				z01.PrintRune((rune(y) + 48))
+
+				firstDigit := '0' + rune(i)
+				secondDigit := '0' + rune(x)
+				thirdDigit := '0' + rune(y)
+
+				z01.PrintRune(firstDigit)
+				z01.PrintRune(secondDigit)
+				z01.PrintRune(thirdDigit)
 
 				if i < 7 || (i == 7 && x < 8) || (i == 7 && x == 8 && y < 9) {
 					z01.PrintRune(',')
