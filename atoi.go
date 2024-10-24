@@ -4,7 +4,9 @@ func Atoi(s string) int {
 	num := 0
 	var char int
 	sign := 1
-
+	if len(s) == 0 {
+		return 0
+	}
 	if s[0] == '-' {
 		sign = -1
 		s = s[1:]
