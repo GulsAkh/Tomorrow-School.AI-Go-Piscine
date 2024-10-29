@@ -1,17 +1,10 @@
 package piscine
 
 func Index(s string, toFind string) int {
-	var index int = 0
-	if len(toFind) == 0 {
-		return 0
-	}
-	for i := 0; i < len(s); i++ {
-		if s[i] == toFind[0] {
-			index = i
-			break
-		} else {
-			index = -1
+	for i := 0; i < len(s)-len(toFind); i++ {
+		if s[i:i+len(toFind)] == toFind {
+			return i
 		}
 	}
-	return index
+	return -1
 }
