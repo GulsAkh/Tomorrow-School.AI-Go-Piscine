@@ -1,4 +1,4 @@
-package main
+package piscine
 
 import "github.com/01-edu/z01"
 
@@ -12,10 +12,4 @@ func PrintNbrInOrder(n int) {
 			n = n / 10
 		}
 	}
-}
-
-func main() {
-	PrintNbrInOrder(321)
-	PrintNbrInOrder(0)
-	PrintNbrInOrder(321)
 }
