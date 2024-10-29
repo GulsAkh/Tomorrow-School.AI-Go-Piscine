@@ -31,5 +31,4 @@ func PrintNbrInOrder(n int) {
 	for _, el := range string(runes) {
 		z01.PrintRune(el)
 	}
-	z01.PrintRune(10)
 }
