@@ -10,7 +10,6 @@ func main() {
 	isUpper := false
 	startIndex := 1
 
-	// check for the --upper flag
 	if len(os.Args) > 1 && os.Args[1] == "--upper" {
 		isUpper = true
 		startIndex = 2
@@ -19,7 +18,6 @@ func main() {
 		z01.PrintRune('\n')
 		return
 	}
-	hasOutput := false
 	for j := startIndex; j < len(os.Args); j++ {
 		arg := os.Args[j]
 		num := 0
@@ -45,9 +43,6 @@ func main() {
 			letter = rune(num + 'a' - 1)
 		}
 		z01.PrintRune(letter)
-		hasOutput = true
 	}
-	if hasOutput {
-		z01.PrintRune('\n')
-	}
+	z01.PrintRune('\n')
 }
