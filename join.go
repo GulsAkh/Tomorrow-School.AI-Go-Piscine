@@ -10,5 +10,5 @@ func Join(strs []string, sep string) string {
 			str += string(el)
 		}
 	}
-	return string
+	return str
 }
