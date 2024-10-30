@@ -40,6 +40,7 @@ func main() {
 			letter = rune(num + 'a' - 1)
 		}
 		z01.PrintRune(letter)
+
+		// z01.PrintRune('\n')
 	}
-	z01.PrintRune('\n')
 }
