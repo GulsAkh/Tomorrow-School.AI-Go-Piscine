@@ -3,8 +3,12 @@ package piscine
 func Join(strs []string, sep string) string {
 	str := ""
 
-	for _, el := range strs {
-		str += string(el) + sep
+	for i, el := range strs {
+		if i != (len(strs) - 1) {
+			str += string(el) + sep
+		} else {
+			str += string(el)
+		}
 	}
-	return str
+	return string
 }
