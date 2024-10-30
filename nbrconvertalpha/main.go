@@ -15,7 +15,6 @@ func main() {
 		startIndex = 2
 	}
 	if len(os.Args) <= startIndex {
-		z01.PrintRune('\n')
 		return
 	}
 	for j := startIndex; j < len(os.Args); j++ {
