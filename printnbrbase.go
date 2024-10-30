@@ -4,12 +4,19 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func PrintNbrBase(nbr int64, base string) {
+func PrintNbrBase(nbr int, base string) {
 	based := []rune(base)
 	len_base := len(based)
 
 	str := ""
-
+	if nbr == -9223372036854775808 {
+		str = "9223372036854775808"
+		z01.PrintRune('-')
+		for _, el := range str {
+			z01.PrintRune(el)
+		}
+		return
+	}
 	for i := 0; i < len_base; i++ {
 		for j := i + 1; j < len_base; j++ {
 			if based[i] == based[j] {
@@ -38,8 +45,8 @@ func PrintNbrBase(nbr int64, base string) {
 		str = "0"
 	} else {
 		for nbr > 0 {
-			str = string(base[nbr%len_base]) + str
-			nbr /= len_base
+			str = string(based[nbr%len_base]) + str
+			nbr /= (len_base)
 		}
 	}
 
