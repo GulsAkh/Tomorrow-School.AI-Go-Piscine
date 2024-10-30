@@ -15,6 +15,11 @@ func main() {
 		isUpper = true
 		startIndex = 2
 	}
+	if len(os.Args) <= startIndex {
+		z01.PrintRune('\n')
+		return
+	}
+	hasOutput := false
 	for j := startIndex; j < len(os.Args); j++ {
 		arg := os.Args[j]
 		num := 0
@@ -40,6 +45,9 @@ func main() {
 			letter = rune(num + 'a' - 1)
 		}
 		z01.PrintRune(letter)
+		hasOutput = true
 	}
-	z01.PrintRune('\n')
+	if hasOutput {
+		z01.PrintRune('\n')
+	}
 }
