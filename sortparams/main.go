@@ -7,22 +7,21 @@ import (
 )
 
 func main() {
-	var str []rune
-	for i := 1; i < len(os.Args); i++ {
-		arg := os.Args[i]
-		for _, el := range arg {
-			str = append(str, el)
-		}
-	}
-	for j := 0; j < len(str)-1; j++ {
-		for k := 0; k < len(str)-j-1; k++ {
-			if str[k] > str[k+1] {
-				str[k], str[k+1] = str[k+1], str[k]
+	arg := os.Args[1:]
+
+	n := len(arg)
+	for j := 0; j < n-1; j++ {
+		for k := 0; k < n-j-1; k++ {
+			if arg[k] > arg[k+1] {
+				arg[k], arg[k+1] = arg[k+1], arg[k]
 			}
 		}
 	}
-	for _, sort := range str {
-		z01.PrintRune(sort)
+	for _, sort := range arg {
+		for _, char := range sort {
+			z01.PrintRune(char)
+		}
 		z01.PrintRune('\n')
 	}
+	z01.PrintRune('\n')
 }
