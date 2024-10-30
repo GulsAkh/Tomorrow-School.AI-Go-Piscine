@@ -4,15 +4,11 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func PrintNbrBase(nbr int, base string) {
+func PrintNbrBase(nbr int64, base string) {
 	based := []rune(base)
 	len_base := len(based)
 
 	str := ""
-	if nbr < 0 {
-		z01.PrintRune('-')
-		nbr = -nbr
-	}
 
 	for i := 0; i < len_base; i++ {
 		for j := i + 1; j < len_base; j++ {
@@ -31,6 +27,11 @@ func PrintNbrBase(nbr int, base string) {
 		z01.PrintRune('N')
 		z01.PrintRune('V')
 		return
+	}
+
+	if nbr < 0 {
+		z01.PrintRune('-')
+		nbr = -nbr
 	}
 
 	if nbr == 0 {
