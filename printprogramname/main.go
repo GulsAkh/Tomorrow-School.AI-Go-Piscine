@@ -9,8 +9,8 @@ import (
 func main() {
 	programName := os.Args[0]
 
-	for _, el := range programName {
-		z01.PrintRune(el)
+	for i := range programName {
+		z01.PrintRune(rune(programName[i]))
 	}
 	z01.PrintRune('\n')
 }
