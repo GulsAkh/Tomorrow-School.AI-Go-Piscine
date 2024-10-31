@@ -6,7 +6,7 @@ func MakeRange(min, max int) []int {
 	}
 
 	answer := make([]int, max-min)
-	for i := 0; i < len(answer); i++ {
+	for i := 0; i < max-min; i++ {
 		answer[i] = min + i
 	}
 	return answer
