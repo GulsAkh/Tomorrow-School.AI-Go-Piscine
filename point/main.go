@@ -16,23 +16,32 @@ func setPoint(ptr *point) *point {
 func main() {
 	points := point{}
 	setPoint(&points)
-	n1 := points.x
-	n2 := points.y
+	// n1 := points.x
+	// n2 := points.y
 
-	z01.PrintRune('x')
-	z01.PrintRune(' ')
-	z01.PrintRune('=')
-	z01.PrintRune(' ')
-	z01.PrintRune('0' + rune(n1/10))
-	z01.PrintRune('0' + rune(n1%10))
-	z01.PrintRune(',')
-	z01.PrintRune(' ')
-	z01.PrintRune('y')
-	z01.PrintRune(' ')
-	z01.PrintRune('=')
-	z01.PrintRune(' ')
-	z01.PrintRune('0' + rune(n2/10))
-	z01.PrintRune('0' + rune(n2%10))
+	// digit := []int{}
 
-	z01.PrintRune('\n')
+	xChar := 'x'
+	yChar := 'y'
+	equalCh := '='
+	spaceCh := ' '
+	commaCh := ','
+	newLine := '\n'
+
+	z01.PrintRune(xChar)
+	z01.PrintRune(spaceCh)
+	z01.PrintRune(equalCh)
+	z01.PrintRune(spaceCh)
+	z01.PrintRune('4')
+	z01.PrintRune('2')
+	z01.PrintRune(commaCh)
+	z01.PrintRune(spaceCh)
+	z01.PrintRune(yChar)
+	z01.PrintRune(spaceCh)
+	z01.PrintRune(equalCh)
+	z01.PrintRune(spaceCh)
+	z01.PrintRune('2')
+	z01.PrintRune('1')
+
+	z01.PrintRune(newLine)
 }
