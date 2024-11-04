@@ -22,7 +22,7 @@ func main() {
 	// equalCh := '='
 	// spaceCh := ' '
 	// commaCh := ','
-	newLine := '\n'
+	// newLine := '\n'
 
 	// z01.PrintRune(xChar)
 	// z01.PrintRune(spaceCh)
@@ -39,5 +39,5 @@ func main() {
 	z01.PrintRune(50)
 	z01.PrintRune(49)
 
-	z01.PrintRune(newLine)
+	// z01.PrintRune(newLine)
 }
