@@ -17,25 +17,25 @@ func main() {
 	points := point{}
 	setPoint(&points)
 
-	xChar := 'x'
-	yChar := 'y'
-	equalCh := '='
-	spaceCh := ' '
-	commaCh := ','
+	// xChar := 'x'
+	// yChar := 'y'
+	// equalCh := '='
+	// spaceCh := ' '
+	// commaCh := ','
 	newLine := '\n'
 
-	z01.PrintRune(xChar)
-	z01.PrintRune(spaceCh)
-	z01.PrintRune(equalCh)
-	z01.PrintRune(spaceCh)
+	// z01.PrintRune(xChar)
+	// z01.PrintRune(spaceCh)
+	// z01.PrintRune(equalCh)
+	// z01.PrintRune(spaceCh)
 	z01.PrintRune(52)
 	z01.PrintRune(50)
-	z01.PrintRune(commaCh)
-	z01.PrintRune(spaceCh)
-	z01.PrintRune(yChar)
-	z01.PrintRune(spaceCh)
-	z01.PrintRune(equalCh)
-	z01.PrintRune(spaceCh)
+	// z01.PrintRune(commaCh)
+	// z01.PrintRune(spaceCh)
+	// z01.PrintRune(yChar)
+	// z01.PrintRune(spaceCh)
+	// z01.PrintRune(equalCh)
+	// z01.PrintRune(spaceCh)
 	z01.PrintRune(50)
 	z01.PrintRune(49)
 
