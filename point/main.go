@@ -13,41 +13,17 @@ func setPoint(ptr *point) *point {
 	return ptr
 }
 
-func convertInt(n int) string {
-	var str string
+func main() {
+	points := point{}
+	setPoint(&points)
+	n1 := points.x
+	n2 := points.y
+	str1 := string(rune('0'+n1/10)) + string(rune('0'+n1%10))
+	str2 := string(rune('0'+n2/10)) + string(rune('0'+n2%10))
 
-	if n == 0 {
-		str = "0"
-	} else {
-		if n < 0 {
-			str = "-"
-			n = -n
-		}
-
-		for n > 0 {
-			digit := n % 10
-			str = string(rune('0'+digit)) + str
-			n = n / 10
-		}
-	}
-	return str
-}
-
-func printWithRune(s string) {
-	for _, r := range s {
+	message := "x = " + str1 + ", " + "y = " + str2
+	for _, r := range message {
 		z01.PrintRune(r)
 	}
 	z01.PrintRune('\n')
-}
-
-func main() {
-	points := point{}
-
-	setPoint(&points)
-	str1 := convertInt(points.x)
-	str2 := convertInt(points.y)
-
-	message := "x = " + str1 + ", " + "y = " + str2
-
-	printWithRune(message)
 }
