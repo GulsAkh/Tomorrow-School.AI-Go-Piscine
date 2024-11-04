@@ -13,14 +13,23 @@ func setPoint(ptr *point) *point {
 	return ptr
 }
 
+func printNum(num int) {
+	digit := []int{}
+	for num > 0 {
+		digit = append(digit, num%10)
+		num /= 10
+	}
+
+	for i := len(digit) - 1; i >= 0; i-- {
+		z01.PrintRune(rune(48 + digit[i]))
+	}
+}
+
 func main() {
 	points := point{}
 	setPoint(&points)
-	// n1 := points.x
-	// n2 := points.y
-
-	// digit := []int{}
-
+	n1 := points.x
+	n2 := points.y
 	xChar := 'x'
 	yChar := 'y'
 	equalCh := '='
@@ -32,16 +41,14 @@ func main() {
 	z01.PrintRune(spaceCh)
 	z01.PrintRune(equalCh)
 	z01.PrintRune(spaceCh)
-	z01.PrintRune('4')
-	z01.PrintRune('2')
+	printNum(n1)
 	z01.PrintRune(commaCh)
 	z01.PrintRune(spaceCh)
 	z01.PrintRune(yChar)
 	z01.PrintRune(spaceCh)
 	z01.PrintRune(equalCh)
 	z01.PrintRune(spaceCh)
-	z01.PrintRune('2')
-	z01.PrintRune('1')
+	printNum(n2)
 
 	z01.PrintRune(newLine)
 }
