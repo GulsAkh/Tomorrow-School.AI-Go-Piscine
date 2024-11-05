@@ -29,9 +29,9 @@ func main() {
 	for _, chr := range ", y = " {
 		z01.PrintRune(chr)
 	}
-	num2 := [2]rune{2, 1}
+	num2 := [3]rune{2, 1, -38}
 
 	for _, digit := range num2 {
-		z01.PrintRune(48 + digit + 10)
+		z01.PrintRune(48 + digit)
 	}
 }
