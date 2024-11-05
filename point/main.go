@@ -22,8 +22,8 @@ func main() {
 
 	num1 := [2]int{4, 2}
 
-	for _, digit := range num1 {
-		z01.PrintRune('0' + digit)
+	for i := range num1 {
+		z01.PrintRune('0' + num1[i])
 	}
 
 	for _, chr := range ", y = " {
