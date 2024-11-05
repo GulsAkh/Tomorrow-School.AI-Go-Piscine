@@ -16,7 +16,14 @@ func setPoint(ptr *point) *point {
 func main() {
 	points := point{}
 	setPoint(&points)
-	for _, chr := range "x = 42, y = 21\n" {
+	for _, chr := range "x = " {
 		z01.PrintRune(chr)
 	}
+	z01.PrintRune(52)
+	z01.PrintRune(50)
+	for _, chr := range "y = " {
+		z01.PrintRune(chr)
+	}
+	z01.PrintRune(50)
+	z01.PrintRune(49)
 }
