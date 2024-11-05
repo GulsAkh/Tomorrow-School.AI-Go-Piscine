@@ -23,7 +23,7 @@ func main() {
 	num1 := [2]int{points.x / 10, points.x % 10}
 
 	for _, digit := range num1 {
-		z01.PrintRune('0' + rune(digit))
+		z01.PrintRune('0' + digit)
 	}
 
 	for _, chr := range ", y = " {
@@ -32,6 +32,6 @@ func main() {
 	num2 := [2]int{points.y / 10, points.y % 10}
 
 	for _, digit := range num2 {
-		z01.PrintRune('0' + rune(digit))
+		z01.PrintRune('0' + digit)
 	}
 }
