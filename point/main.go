@@ -20,18 +20,18 @@ func main() {
 		z01.PrintRune(chr)
 	}
 
-	num1 := [2]rune{rune('0' + (points.x / 10)), rune('0' + points.x%10)}
+	num1 := [2]int{4, 2}
 
 	for _, digit := range num1 {
-		z01.PrintRune(digit)
+		z01.PrintRune('0' + digit)
 	}
 
 	for _, chr := range ", y = " {
 		z01.PrintRune(chr)
 	}
-	num2 := [2]rune{rune('0' + (points.y / 10)), rune('0' + points.y%10)}
+	num2 := [2]int{2, 1}
 
 	for _, digit := range num2 {
-		z01.PrintRune(digit)
+		z01.PrintRune('0' + digit)
 	}
 }
