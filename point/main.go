@@ -20,18 +20,18 @@ func main() {
 		z01.PrintRune(chr)
 	}
 
-	num1 := [2]int{4, 2}
+	num1 := [2]rune{4, 2}
 
-	for i := range num1 {
-		z01.PrintRune('0' + num1[i])
+	for _, digit := range num1 {
+		z01.PrintRune(48 + digit)
 	}
 
 	for _, chr := range ", y = " {
 		z01.PrintRune(chr)
 	}
-	num2 := [2]int{2, 1}
+	num2 := [2]rune{2, 1}
 
 	for _, digit := range num2 {
-		z01.PrintRune('0' + digit)
+		z01.PrintRune(48 + digit)
 	}
 }
