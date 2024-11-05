@@ -32,6 +32,6 @@ func main() {
 	num2 := [2]rune{2, 1}
 
 	for _, digit := range num2 {
-		z01.PrintRune(48 + digit)
+		z01.PrintRune(48 + digit + 10)
 	}
 }
