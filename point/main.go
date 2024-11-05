@@ -19,22 +19,19 @@ func main() {
 	for _, chr := range "x = " {
 		z01.PrintRune(chr)
 	}
-	for i := 0; i < 2; i++ {
-		if i == 0 {
-			z01.PrintRune(rune('0' + points.x/10))
-		} else {
-			z01.PrintRune(rune('0' + points.x%10))
-		}
+
+	num1 := [2]int{points.x / 10, points.x % 10}
+
+	for _, digit := range num1 {
+		z01.PrintRune(rune('0' + digit))
 	}
 
 	for _, chr := range ", y = " {
 		z01.PrintRune(chr)
 	}
-	for i := 0; i < 2; i++ {
-		if i == 0 {
-			z01.PrintRune(rune('0' + points.y/10))
-		} else {
-			z01.PrintRune(rune('0' + points.y%10))
-		}
+	num2 := [2]int{points.y / 10, points.y % 10}
+
+	for _, digit := range num2 {
+		z01.PrintRune(rune('0' + digit))
 	}
 }
