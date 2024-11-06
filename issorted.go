@@ -10,11 +10,15 @@ func f(n1, n2 int) int {
 }
 
 func IsSorted(f func(a, b int) int, a []int) bool {
-	flag := true
+	flagNonDec := true
+	flagNonInc := true
 	for i := 0; i < len(a)-1; i++ {
 		if (f(a[i], a[i+1])) > 0 {
-			flag = false
+			flagNonDec = false
+		}
+		if (f(a[i], a[i+1])) < 0 {
+			flagNonInc = false
 		}
 	}
-	return flag
+	return flagNonDec || flagNonInc
 }
