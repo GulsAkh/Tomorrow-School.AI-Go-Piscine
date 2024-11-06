@@ -1,6 +1,8 @@
-package piscine
+package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func PrintNbr(num int) {
 	fmt.Print(num)
