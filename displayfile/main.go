@@ -7,18 +7,18 @@ import (
 )
 
 func main() {
-	args := os.Args
-	if len(args) < 2 {
+	if len(os.Args) < 2 {
 		fmt.Println("File name missing")
-	} else if len(args) > 2 {
+	} else if len(os.Args) > 2 {
 		fmt.Println("Too many arguments")
 	}
 	fileName := os.Args[1]
-	file, err := os.OpenFile(fileName, os.O_RDWR, 0o666)
+	file, err := os.Open(fileName)
 	if err != nil {
 		fmt.Println("Error handling file", err)
 		return
 	}
+	defer file.Close()
 
 	content, err := io.ReadAll(file)
 	if err != nil {
@@ -27,5 +27,4 @@ func main() {
 	}
 
 	fmt.Println(string(content))
-	defer file.Close()
 }
