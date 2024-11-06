@@ -7,10 +7,13 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 2 {
+	args := os.Args
+	if len(args) < 2 {
 		fmt.Println("File name missing")
-	} else if len(os.Args) > 2 {
+		return
+	} else if len(args) > 2 {
 		fmt.Println("Too many arguments")
+		return
 	}
 	fileName := os.Args[1]
 	file, err := os.Open(fileName)
