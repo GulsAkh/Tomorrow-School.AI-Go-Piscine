@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"strings"
 )
 
 func main() {
@@ -30,8 +29,5 @@ func main() {
 		return
 	}
 
-	contentStr := string(content)
-	contentStr = strings.TrimSpace(contentStr)
-
-	fmt.Println(contentStr)
+	fmt.Println(string(content))
 }
