@@ -5,6 +5,8 @@ func f(n1, n2 int) int {
 		if n1 < n2 {
 			return -1
 		}
+	} else if n1 > 0 && n2 < 0 {
+		return -1
 	} else {
 		if n1 > n2 {
 			return 1
