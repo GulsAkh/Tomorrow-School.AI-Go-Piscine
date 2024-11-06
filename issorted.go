@@ -12,9 +12,7 @@ func f(n1, n2 int) int {
 func IsSorted(f func(a, b int) int, a []int) bool {
 	flag := true
 	for i := 0; i < len(a)-1; i++ {
-		b := a[i] % 10
-		c := a[i+1] % 10
-		if (f(b, c)) > 0 {
+		if (f(a[i], a[i+1])) > 0 {
 			flag = false
 		}
 	}
