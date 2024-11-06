@@ -1,8 +1,8 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
+	"io"
 	"os"
 )
 
@@ -19,15 +19,13 @@ func main() {
 		fmt.Println("Error handling file", err)
 		return
 	}
-	defer file.Close()
 
-	scanner := bufio.NewScanner(file)
-
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-	}
-
-	if err := scanner.Err(); err != nil {
+	content, err := io.ReadAll(file)
+	if err != nil {
 		fmt.Println("Error reading file: ", err)
+		return
 	}
+
+	fmt.Println(string(content))
+	defer file.Close()
 }
