@@ -1,8 +1,3 @@
-package main
-
-import (
-	"fmt"
-)
 
 func PrintNbr(num int) {
 	fmt.Print(num)
