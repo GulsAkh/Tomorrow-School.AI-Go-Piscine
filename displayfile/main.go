@@ -29,5 +29,12 @@ func main() {
 		return
 	}
 
-	fmt.Println(string(content))
+	contentStr := ""
+
+	for _, b := range string(content) {
+		if b != '\n' {
+			contentStr += string(b)
+		}
+	}
+	fmt.Println(contentStr)
 }
