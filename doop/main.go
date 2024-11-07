@@ -4,20 +4,11 @@ import (
 	"os"
 )
 
-func IsNumeric(s string) bool {
-	for _, el := range s {
-		if el < '0' || el > '9' {
-			return false
-		}
-	}
-	return true
-}
-
-func Atoi(s string) int {
+func Atoi(s string) (int, bool) {
 	num := 0
 	sign := 1
 	if len(s) == 0 {
-		return 0
+		return 0, false
 	}
 	if s[0] == '-' {
 		sign = -1
@@ -27,11 +18,11 @@ func Atoi(s string) int {
 	}
 	for _, el := range s {
 		if el < '0' || el > '9' {
-			return 0
+			return 0, false
 		}
 		num = num*10 + int(el-'0')
 	}
-	return num * sign
+	return num * sign, true
 }
 
 func Itoa(n int) string {
@@ -70,17 +61,13 @@ func main() {
 	if args[1] != "+" && args[1] != "-" && args[1] != "/" && args[1] != "*" && args[1] != "%" {
 		return
 	}
-	var num1 int
-	var num2 int
-	if IsNumeric(args[0]) {
-		num1 = Atoi(args[0])
-	} else {
-		return
+	num1, valid1 := Atoi(args[0])
+	if valid1 {
+		num1 = num1
 	}
-	if IsNumeric(args[2]) {
-		num2 = Atoi(args[2])
-	} else {
-		return
+	num2, valid2 := Atoi(args[2])
+	if valid2 {
+		num2 = num2
 	}
 
 	sign := args[1]
