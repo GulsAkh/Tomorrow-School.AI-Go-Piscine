@@ -1,4 +1,4 @@
-package piscine
+package main
 
 import (
 	"os"
@@ -93,4 +93,5 @@ func main() {
 
 	str := Itoa(result)
 	os.Stdout.Write([]byte(str))
+	os.Stdout.Write([]byte("\n"))
 }
