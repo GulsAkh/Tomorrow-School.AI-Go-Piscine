@@ -1,7 +1,6 @@
 package piscine
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/01-edu/z01"
@@ -79,15 +78,20 @@ func main() {
 		result = num1 - num2
 	} else if sign == "/" {
 		if num2 == 0 {
-			fmt.Println("No division by 0")
+			mesDiv := "No division by 0"
+			for _, el := range mesDiv {
+				z01.PrintRune(el)
+			}
 			return
 		} else {
 			result = num1 / num2
 		}
 	} else if sign == "%" {
 		if num2 == 0 {
-			fmt.Println("No modulo by 0")
-			return
+			mesMod := "No modulo by 0"
+			for _, el := range mesMod {
+				z01.PrintRune(el)
+			}
 		} else {
 			result = num1 % num2
 		}
