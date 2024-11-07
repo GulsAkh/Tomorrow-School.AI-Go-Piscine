@@ -4,6 +4,15 @@ import (
 	"os"
 )
 
+func IsNumeric(s string) bool {
+	for _, el := range s {
+		if el < '0' || el > '9' {
+			return false
+		}
+	}
+	return true
+}
+
 func Atoi(s string) int {
 	num := 0
 	sign := 1
@@ -61,13 +70,22 @@ func main() {
 	if args[1] != "+" && args[1] != "-" && args[1] != "/" && args[1] != "*" && args[1] != "%" {
 		return
 	}
-	var result int
-	sign := args[1]
-	num1 := Atoi(args[0])
-	num2 := Atoi(args[2])
-	if num1 == 0 || num2 == 0 {
+	var num1 int
+	var num2 int
+	if IsNumeric(args[0]) {
+		num1 = Atoi(args[0])
+	} else {
 		return
 	}
+	if IsNumeric(args[2]) {
+		num2 = Atoi(args[2])
+	} else {
+		return
+	}
+
+	sign := args[1]
+	var result int
+
 	if sign == "*" {
 		result = num1 * num2
 	} else if sign == "+" {
@@ -78,6 +96,7 @@ func main() {
 		if num2 == 0 {
 			mesDiv := "No division by 0"
 			os.Stdout.Write([]byte(mesDiv))
+			os.Stdout.Write([]byte("\n"))
 			return
 		} else {
 			result = num1 / num2
@@ -86,6 +105,8 @@ func main() {
 		if num2 == 0 {
 			mesMod := "No modulo by 0"
 			os.Stdout.Write([]byte(mesMod))
+			os.Stdout.Write([]byte("\n"))
+			return
 		} else {
 			result = num1 % num2
 		}
