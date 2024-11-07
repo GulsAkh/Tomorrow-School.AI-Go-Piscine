@@ -64,10 +64,14 @@ func main() {
 	num1, valid1 := Atoi(args[0])
 	if valid1 {
 		num1 = num1
+	} else {
+		return
 	}
 	num2, valid2 := Atoi(args[2])
 	if valid2 {
 		num2 = num2
+	} else {
+		return
 	}
 
 	sign := args[1]
