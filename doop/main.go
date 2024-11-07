@@ -1,8 +1,10 @@
-package main
+package piscine
 
 import (
 	"fmt"
 	"os"
+
+	"github.com/01-edu/z01"
 )
 
 func Atoi(s string) int {
@@ -24,6 +26,28 @@ func Atoi(s string) int {
 		num = num*10 + int(el-'0')
 	}
 	return num * sign
+}
+
+func Itoa(n int) string {
+	negative := false
+	if n < 0 {
+		negative = true
+		n = -n
+	}
+	str := ""
+	if n == 0 {
+		str = "0"
+	} else {
+		for n > 0 {
+			digit := n % 10
+			str = string(digit+'0') + str
+			n /= 10
+		}
+	}
+	if negative {
+		str = "-" + str
+	}
+	return str
 }
 
 func main() {
@@ -68,5 +92,9 @@ func main() {
 			result = num1 % num2
 		}
 	}
-	fmt.Println(result)
+
+	str := Itoa(result)
+	for _, el := range str {
+		z01.PrintRune(el)
+	}
 }
