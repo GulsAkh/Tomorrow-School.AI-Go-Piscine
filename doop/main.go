@@ -2,8 +2,6 @@ package piscine
 
 import (
 	"os"
-
-	"github.com/01-edu/z01"
 )
 
 func Atoi(s string) int {
@@ -79,9 +77,7 @@ func main() {
 	} else if sign == "/" {
 		if num2 == 0 {
 			mesDiv := "No division by 0"
-			for _, el := range mesDiv {
-				z01.PrintRune(el)
-			}
+			os.Stdout.Write([]byte(mesDiv))
 			return
 		} else {
 			result = num1 / num2
@@ -89,16 +85,12 @@ func main() {
 	} else if sign == "%" {
 		if num2 == 0 {
 			mesMod := "No modulo by 0"
-			for _, el := range mesMod {
-				z01.PrintRune(el)
-			}
+			os.Stdout.Write([]byte(mesMod))
 		} else {
 			result = num1 % num2
 		}
 	}
 
 	str := Itoa(result)
-	for _, el := range str {
-		z01.PrintRune(el)
-	}
+	os.Stdout.Write([]byte(str))
 }
