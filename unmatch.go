@@ -5,20 +5,18 @@ func Unmatch(a []int) int {
 	for _, num := range a {
 		c[num]++
 	}
-	var num int
+
 	for _, count := range c {
 		if c[count]%2 != 0 {
-			num = count // Return the first element with an odd count (no pair)
-		} else {
-			num = -1
+			return count // Return the first element with an odd count (no pair)
 		}
 	}
 
-	return num
+	return -1
 }
 
 // func main() {
-// 	a := []int{1, 2, 3, 4, 5, 6, 7, 8}
+// 	a := []int{1, 1, 2, 4, 3, 4, 2, 3, 4}
 // 	unmatch := Unmatch(a)
 // 	fmt.Println(unmatch)
 // }
