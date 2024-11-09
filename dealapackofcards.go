@@ -13,7 +13,7 @@ func printNum(cards []int) {
 }
 
 func DealAPackOfCards(deck []int) {
-	n := len(deck) / 4
+	n := 12 / 4
 
 	player1 := (deck[:n])
 	player2 := deck[n : 2*n]
