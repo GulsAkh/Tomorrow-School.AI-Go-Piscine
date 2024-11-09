@@ -1,22 +1,20 @@
 package piscine
 
 func Rot14(s string) string {
-	str := ""
+	runes := []rune(str)
 
-	for _, el := range s {
-		if el == 'o' || el == 'w' || el == 'y' || el == 'u' || el == 'r' {
-			str += string(el - 12)
-		} else if el >= 'a' && el <= 'z' || el >= 'A' && el <= 'Z' {
-			str += string(el + 14)
-		} else {
-			str += string(el)
+	for i, r := range s {
+		if r >= 'a' && r <= 'z' {
+			runes[i] = 'a' + (r-'a'+14)%26
+		} else if r >= 'A' && r <= 'Z' {
+			runes[i] = 'A' + (r-'A'+14)%26
 		}
 	}
 	// for _, r := range str {
 	// 	z01.PrintRune(r)
 	// }
 	// z01.PrintRune('\n')
-	return str
+	return string(runes)
 }
 
 // H e l l o!          H o w a r e           Y o u?
