@@ -1,22 +1,25 @@
 package piscine
 
 func Unmatch(a []int) int {
+	// Map to store the frequency of each element
 	c := make(map[int]int)
 	for _, num := range a {
 		c[num]++
 	}
 
-	var num int
-	for i, el := range c {
-		if el%2 != 0 {
-			num = i
+	// Check for elements with odd occurrences
+	for num, count := range c {
+		if count%2 != 0 {
+			return num // Return the first element with an odd count (no pair)
 		}
 	}
-	return num
+
+	// If all elements have pairs, return -1
+	return -1
 }
 
 // func main() {
-// 	a := []int{1, 2, 3, 1, 2, 3, 4}
+// 	a := []int{1, 2, 3, 4, 5, 6, 7, 8}
 // 	unmatch := Unmatch(a)
 // 	fmt.Println(unmatch)
 // }
