@@ -8,9 +8,9 @@ func Unmatch(a []int) int {
 	}
 
 	// Check for elements with odd occurrences
-	for num, count := range c {
-		if count%2 != 0 {
-			return num // Return the first element with an odd count (no pair)
+	for _, count := range c {
+		if c[count]%2 != 0 {
+			return count // Return the first element with an odd count (no pair)
 		}
 	}
 
