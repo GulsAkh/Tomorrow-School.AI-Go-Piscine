@@ -1,4 +1,4 @@
-package main
+package piscine
 
 func DescendAppendRange(max, min int) []int {
 	var num []int
