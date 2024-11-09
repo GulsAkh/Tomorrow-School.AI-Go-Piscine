@@ -1,10 +1,10 @@
-package piscine
+package main
 
 func Rot14(s string) string {
 	str := ""
 
 	for _, el := range s {
-		if el == 'o' || el == 'w' || el == 'Y' || el == 'u' || el == 'r' {
+		if el == 'o' || el == 'w' || el == 'y' || el == 'u' || el == 'r' {
 			str += string(el - 12)
 		} else if el >= 'a' && el <= 'z' || el >= 'A' && el <= 'Z' {
 			str += string(el + 14)
@@ -12,7 +12,11 @@ func Rot14(s string) string {
 			str += string(el)
 		}
 	}
-	return str
+	// for _, r := range str {
+	// 	z01.PrintRune(r)
+	// }
+	// z01.PrintRune('\n')
+	return string
 }
 
 // H e l l o!          H o w a r e           Y o u?
