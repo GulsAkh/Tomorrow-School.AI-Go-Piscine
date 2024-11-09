@@ -1,14 +1,15 @@
 package piscine
 
 func Unmatch(a []int) int {
-	c := make(map[int]int)
-	for _, num := range a {
-		c[num]++
-	}
-
-	for _, count := range c {
-		if c[count]%2 != 0 {
-			return count // Return the first element with an odd count (no pair)
+	count := 0
+	for i := 0; i < len(a); i++ {
+		for j := 0; j < len(a); j++ {
+			if a[i] == a[j] {
+				count++
+			}
+		}
+		if count%2 != 0 {
+			return a[i]
 		}
 	}
 
