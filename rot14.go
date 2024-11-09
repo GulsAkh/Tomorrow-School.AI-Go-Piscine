@@ -1,4 +1,4 @@
-package main
+package piscine
 
 func Rot14(s string) string {
 	str := ""
