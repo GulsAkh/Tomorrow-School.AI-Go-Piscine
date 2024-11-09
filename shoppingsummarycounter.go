@@ -9,6 +9,8 @@ func ShoppingSummaryCounter(str string) map[string]int {
 			if str != "" {
 				m[str1]++
 				str1 = ""
+			} else {
+				m[""]++
 			}
 		} else {
 			str1 += string(char)
