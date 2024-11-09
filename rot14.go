@@ -1,9 +1,9 @@
 package piscine
 
 func Rot14(s string) string {
-	runes := []rune(str)
+	runes := []rune(s)
 
-	for i, r := range s {
+	for i, r := range runes {
 		if r >= 'a' && r <= 'z' {
 			runes[i] = 'a' + (r-'a'+14)%26
 		} else if r >= 'A' && r <= 'Z' {
