@@ -6,6 +6,7 @@ func printNum(cards []int) {
 	for i, card := range cards {
 		if i > 0 {
 			fmt.Printf(" ")
+			fmt.Printf(", ")
 		}
 		fmt.Printf("%d", card)
 	}
