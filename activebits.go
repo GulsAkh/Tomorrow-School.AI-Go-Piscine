@@ -1,4 +1,4 @@
-package main
+package piscine
 
 func ActiveBits(n int) int {
 	count := 0
@@ -6,4 +6,5 @@ func ActiveBits(n int) int {
 		count += n % 2
 		n /= 2
 	}
+	return count
 }
