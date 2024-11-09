@@ -1,4 +1,4 @@
-package main
+package piscine
 
 func CollatzCountdown(start int) int {
 	count := 0
