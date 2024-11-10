@@ -12,7 +12,7 @@ func RockAndRoll(n int) string {
 	} else if n%3 == 0 {
 		str += "roll\n"
 	} else {
-		str = "non divisible\n"
+		str += "non divisible\n"
 	}
 	return str
 }
