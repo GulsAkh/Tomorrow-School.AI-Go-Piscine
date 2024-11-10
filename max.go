@@ -1,4 +1,4 @@
-package piscinego
+package piscine
 
 func Max(a []int) int {
 	var maX int
