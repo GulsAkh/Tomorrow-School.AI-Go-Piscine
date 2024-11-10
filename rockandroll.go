@@ -2,7 +2,7 @@ package piscine
 
 func RockAndRoll(n int) string {
 	if n < 0 {
-		return "number is negative\n"
+		return "error: number is negative\n"
 	}
 	if n%2 == 0 && n%3 == 0 {
 		return "rock and roll\n"
@@ -11,7 +11,7 @@ func RockAndRoll(n int) string {
 	} else if n%3 == 0 {
 		return "roll\n"
 	}
-	return "non divisible"
+	return "error: non divisible"
 }
 
 // func main() {
