@@ -1,15 +1,24 @@
 package piscine
 
-// import (
-// 	"fmt"
-
-// 	"piscine"
-// )
+import (
+	"fmt"
+)
 
 // type (
-// 	List = piscine.List
-// 	Node = piscine.NodeL
+//
+//	List = piscine.List
+//	Node = piscine.NodeL
+//
 // )
+type NodeL struct {
+	Data interface{}
+	Next *NodeL
+}
+
+type List struct {
+	Head *NodeL
+	Tail *NodeL
+}
 
 // func ListPushBack(l *List, data interface{}) {
 // 	newNode := &NodeL{}
@@ -24,14 +33,14 @@ package piscine
 // 	}
 // }
 
-// func PrintList(l *List) {
-// 	link := l.Head
-// 	for link != nil {
-// 		fmt.Print(link.Data, " -> ")
-// 		link = link.Next
-// 	}
-// 	fmt.Println(nil)
-// }
+func PrintList(l *List) {
+	link := l.Head
+	for link != nil {
+		fmt.Print(link.Data, " -> ")
+		link = link.Next
+	}
+	fmt.Println(nil)
+}
 
 // func ListClear(l *List) {
 // 	for l.Head != nil {
