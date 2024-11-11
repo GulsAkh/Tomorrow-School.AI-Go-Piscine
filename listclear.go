@@ -33,22 +33,22 @@ func PrintList(l *List) {
 	fmt.Println(nil)
 }
 
-func ListClear(l *List) {
-	for l.Head != nil {
-		l.Head = l.Head.Next
-	}
-}
+// func ListClear(l *List) {
+// 	for l.Head != nil {
+// 		l.Head = l.Head.Next
+// 	}
+// }
 
-func main() {
-	link := &List{}
-	ListPushBack(link, "I")
-	ListPushBack(link, 1)
-	ListPushBack(link, "something")
-	ListPushBack(link, 2)
+// func main() {
+// 	link := &List{}
+// 	ListPushBack(link, "I")
+// 	ListPushBack(link, 1)
+// 	ListPushBack(link, "something")
+// 	ListPushBack(link, 2)
 
-	fmt.Println("------list------")
-	PrintList(link)
-	ListClear(link)
-	fmt.Println("------updated list------")
-	PrintList(link)
-}
+// 	fmt.Println("------list------")
+// 	PrintList(link)
+// 	ListClear(link)
+// 	fmt.Println("------updated list------")
+// 	PrintList(link)
+// }
