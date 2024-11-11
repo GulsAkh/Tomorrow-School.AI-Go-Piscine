@@ -1,43 +1,43 @@
 package main
 
-import (
-	"fmt"
+// import (
+// 	"fmt"
 
-	"piscine"
-)
+// 	"piscine"
+// )
 
-type (
-	List = piscine.List
-	Node = piscine.NodeL
-)
+// type (
+// 	List = piscine.List
+// 	Node = piscine.NodeL
+// )
 
-// func ListPushBack(l *List, data interface{}) {
-// 	newNode := &NodeL{}
-// 	newNode.Data = data
-// 	newNode.Next = nil
-// 	if l.Head == nil {
-// 		l.Head = newNode
-// 		l.Tail = newNode
-// 	} else {
-// 		l.Tail.Next = newNode
-// 		l.Tail = newNode
-// 	}
-// }
-
-func PrintList(l *List) {
-	link := l.Head
-	for link != nil {
-		fmt.Print(link.Data, " -> ")
-		link = link.Next
+func ListPushBack(l *List, data interface{}) {
+	newNode := &NodeL{}
+	newNode.Data = data
+	newNode.Next = nil
+	if l.Head == nil {
+		l.Head = newNode
+		l.Tail = newNode
+	} else {
+		l.Tail.Next = newNode
+		l.Tail = newNode
 	}
-	fmt.Println(nil)
 }
 
-// func ListClear(l *List) {
-// 	for l.Head != nil {
-// 		l.Head = l.Head.Next
+// func PrintList(l *List) {
+// 	link := l.Head
+// 	for link != nil {
+// 		fmt.Print(link.Data, " -> ")
+// 		link = link.Next
 // 	}
+// 	fmt.Println(nil)
 // }
+
+func ListClear(l *List) {
+	for l.Head != nil {
+		l.Head = l.Head.Next
+	}
+}
 
 // func main() {
 // 	link := &List{}
