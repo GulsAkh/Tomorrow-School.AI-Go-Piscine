@@ -6,10 +6,10 @@ package piscine
 // 	"piscine"
 // )
 
-// type (
-// 	List = piscine.List
-// 	Node = piscine.NodeL
-// )
+type (
+	List = piscine.List
+	Node = piscine.NodeL
+)
 
 // func ListPushBack(l *List, data interface{}) {
 // 	newNode := &NodeL{}
