@@ -1,4 +1,4 @@
-package piscine
+package main
 
 import (
 	"fmt"
@@ -11,18 +11,18 @@ type (
 	Node = piscine.NodeL
 )
 
-func ListPushBack(l *List, data interface{}) {
-	newNode := &NodeL{}
-	newNode.Data = data
-	newNode.Next = nil
-	if l.Head == nil {
-		l.Head = newNode
-		l.Tail = newNode
-	} else {
-		l.Tail.Next = newNode
-		l.Tail = newNode
-	}
-}
+// func ListPushBack(l *List, data interface{}) {
+// 	newNode := &NodeL{}
+// 	newNode.Data = data
+// 	newNode.Next = nil
+// 	if l.Head == nil {
+// 		l.Head = newNode
+// 		l.Tail = newNode
+// 	} else {
+// 		l.Tail.Next = newNode
+// 		l.Tail = newNode
+// 	}
+// }
 
 func PrintList(l *List) {
 	link := l.Head
