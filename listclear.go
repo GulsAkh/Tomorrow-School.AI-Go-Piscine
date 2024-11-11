@@ -1,7 +1,5 @@
 package piscine
 
-import "fmt"
-
 // import (
 // 	"fmt"
 
@@ -26,20 +24,20 @@ import "fmt"
 // 	}
 // }
 
-func PrintList(l *List) {
-	link := l.Head
-	for link != nil {
-		fmt.Print(link.Data, " -> ")
-		link = link.Next
-	}
-	fmt.Println(nil)
-}
-
-// func ListClear(l *List) {
-// 	for l.Head != nil {
-// 		l.Head = l.Head.Next
+// func PrintList(l *List) {
+// 	link := l.Head
+// 	for link != nil {
+// 		fmt.Print(link.Data, " -> ")
+// 		link = link.Next
 // 	}
+// 	fmt.Println(nil)
 // }
+
+func ListClear(l *List) {
+	for l.Head != nil {
+		l.Head = l.Head.Next
+	}
+}
 
 // func main() {
 // 	link := &List{}
