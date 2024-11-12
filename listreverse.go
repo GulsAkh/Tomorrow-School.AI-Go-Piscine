@@ -1,5 +1,7 @@
 package piscine
 
+// import "fmt"
+
 // type NodeL struct {
 // 	Data interface{}
 // 	Next *NodeL
@@ -24,15 +26,16 @@ package piscine
 // 	}
 // }
 
+// Iterative reverse
 func ListReverse(l *List) {
-	var prev, next *NodeL
-	current := l.Head
+	var prev *NodeL
 	l.Tail = l.Head
-	for current != nil {
-		next = current.Next
-		current.Next = prev
-		prev = current
-		current = next
+	for l.Head != nil {
+		temp := l.Head.Next
+		l.Head.Next = prev
+		// l.Head.Next (last element) == nil
+		prev = l.Head
+		l.Head = temp
 	}
 	l.Head = prev
 }
