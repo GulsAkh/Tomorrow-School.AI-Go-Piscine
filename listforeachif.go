@@ -1,7 +1,5 @@
 package piscine
 
-import "fmt"
-
 // type NodeL struct {
 // 	Data interface{}
 // 	Next *NodeL
@@ -53,22 +51,22 @@ func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
 	}
 }
 
-func PrintElem(node *NodeL) {
-	fmt.Println(node.Data)
-}
+// func PrintElem(node *NodeL) {
+// 	fmt.Println(node.Data)
+// }
 
-func StringToInt(node *NodeL) {
-	node.Data = 2
-}
+// func StringToInt(node *NodeL) {
+// 	node.Data = 2
+// }
 
-func PrintList(l *List) {
-	it := l.Head
-	for it != nil {
-		fmt.Print(it.Data, "->")
-		it = it.Next
-	}
-	fmt.Print("nil", "\n")
-}
+// func PrintList(l *List) {
+// 	it := l.Head
+// 	for it != nil {
+// 		fmt.Print(it.Data, "->")
+// 		it = it.Next
+// 	}
+// 	fmt.Print("nil", "\n")
+// }
 
 // func main() {
 // 	link := &List{}
