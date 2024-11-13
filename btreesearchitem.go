@@ -30,34 +30,30 @@ func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 	if root == nil {
 		return nil
 	}
+
 	if root.Data == elem {
-		root.Parent = nil
 		return root
 	}
 	if elem > root.Data {
 		if root.Right != nil {
 			root.Right.Parent = root
 		}
-		if root.Right.Data == elem {
-			return root.Right
-		}
+		return BTreeSearchItem(root.Right, elem)
 	} else {
 		if root.Left != nil {
 			root.Left.Parent = root
 		}
-		if root.Left.Data == elem {
-			return root.Left
-		}
+		return BTreeSearchItem(root.Left, elem)
 	}
 	return nil
 }
 
 // func main() {
-// 	root := &TreeNode{Data: ""}
-// 	BTreeInsertData(root, "")
-// 	BTreeInsertData(root, "")
+// 	root := &TreeNode{Data: "4"}
+// 	BTreeInsertData(root, "1")
+// 	BTreeInsertData(root, "7")
 // 	BTreeInsertData(root, "5")
-// 	selected := BTreeSearchItem(root, "")
+// 	selected := BTreeSearchItem(root, "7")
 // 	fmt.Print("Item selected -> ")
 // 	if selected != nil {
 // 		fmt.Println(selected.Data)
