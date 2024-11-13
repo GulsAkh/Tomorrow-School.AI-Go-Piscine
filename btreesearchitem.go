@@ -30,6 +30,9 @@ func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 	if root == nil {
 		return &TreeNode{Data: elem}
 	}
+	if root.Data == elem {
+		return root
+	}
 	if elem > root.Data {
 		if root.Right.Data == elem {
 			return root.Right
