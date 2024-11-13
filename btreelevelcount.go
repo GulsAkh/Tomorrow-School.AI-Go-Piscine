@@ -27,7 +27,7 @@ func BTreeLevelCount(root *TreeNode) int {
 
 	left := BTreeLevelCount(root.Left)
 	right := BTreeLevelCount(root.Right)
-	return left + right
+	return 1 + left + right
 }
 
 // func main() {
