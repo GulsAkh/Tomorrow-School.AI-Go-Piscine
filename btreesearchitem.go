@@ -27,6 +27,9 @@ package piscine
 // }
 
 func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
+	if root == nil {
+		return &TreeNode{Data: data}
+	}
 	if elem > root.Data {
 		if root.Right.Data == elem {
 			return root.Right
