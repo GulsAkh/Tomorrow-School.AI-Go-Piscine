@@ -28,7 +28,7 @@ package piscine
 
 func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 	if root == nil {
-		return &TreeNode{Data: elem}
+		return nil
 	}
 	if root.Data == elem {
 		root.Parent = nil
@@ -53,11 +53,11 @@ func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 }
 
 // func main() {
-// 	root := &TreeNode{Data: "4"}
-// 	BTreeInsertData(root, "1")
-// 	BTreeInsertData(root, "7")
+// 	root := &TreeNode{Data: ""}
+// 	BTreeInsertData(root, "")
+// 	BTreeInsertData(root, "")
 // 	BTreeInsertData(root, "5")
-// 	selected := BTreeSearchItem(root, "7")
+// 	selected := BTreeSearchItem(root, "")
 // 	fmt.Print("Item selected -> ")
 // 	if selected != nil {
 // 		fmt.Println(selected.Data)
