@@ -1,4 +1,4 @@
-package piscine
+// package piscine
 
 // import (
 // 	"fmt"
@@ -21,19 +21,19 @@ package piscine
 // 	return root
 // }
 
-func BTreeIsBinary(root *TreeNode) bool {
-	if root == nil {
-		return true
-	}
-	if root.Left != nil && root.Left.Data >= root.Data {
-		return false
-	}
+// func BTreeIsBinary(root *TreeNode) bool {
+// 	if root == nil {
+// 		return true
+// 	}
+// 	if root.Left != nil && root.Left.Data >= root.Data {
+// 		return false
+// 	}
 
-	if root.Right != nil && root.Right.Data <= root.Data {
-		return false
-	}
-	return BTreeIsBinary(root.Left) && BTreeIsBinary(root.Right)
-}
+// 	if root.Right != nil && root.Right.Data <= root.Data {
+// 		return false
+// 	}
+// 	return BTreeIsBinary(root.Left) && BTreeIsBinary(root.Right)
+// }
 
 // func main() {
 // 	root := &TreeNode{Data: "4"}
