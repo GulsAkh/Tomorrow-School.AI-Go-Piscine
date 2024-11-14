@@ -17,14 +17,22 @@ package piscine
 // 	return root
 // }
 
-func BTreeMax(root *TreeNode) *TreeNode {
+func BTreeMaxHelper(root *TreeNode, parent *TreeNode) *TreeNode {
 	if root == nil {
-		return nil
+		return nil // Return nil if the tree is empty
 	}
-	for root.Right != nil {
-		root = root.Right
+
+	// Traverse to the rightmost node
+	if root.Right != nil {
+		return BTreeMaxHelper(root.Right, root)
 	}
+
 	return root
+}
+
+// BTreeMax - Calls helper function to find the maximum node
+func BTreeMax(root *TreeNode) *TreeNode {
+	return BTreeMaxHelper(root, nil)
 }
 
 // func main() {
