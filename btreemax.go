@@ -3,8 +3,8 @@ package piscine
 // import "fmt"
 
 // type TreeNode struct {
-// 	Data                string
-// 	Left, Right, Parent *TreeNode
+// 	Data        string
+// 	Left, Right *TreeNode
 // }
 
 // func BTreeInsertData(root *TreeNode, data string) *TreeNode {
@@ -20,10 +20,11 @@ package piscine
 // }
 
 func BTreeMax(root *TreeNode) *TreeNode {
-	if root != nil {
-		for root.Right != nil {
-			return BTreeMax(root.Right)
-		}
+	if root == nil {
+		return root
+	}
+	for root.Right != nil {
+		return BTreeMax(root.Right)
 	}
 	return root
 }
