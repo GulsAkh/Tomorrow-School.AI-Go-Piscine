@@ -23,10 +23,10 @@ func BTreeMax(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}
-	for root.Right != nil {
-		return BTreeMax(root.Right)
+	if root.Right == nil {
+		return root
 	}
-	return root
+	return BTreeMax(root.Right)
 }
 
 // func main() {
