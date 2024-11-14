@@ -3,8 +3,8 @@ package piscine
 // import "fmt"
 
 type TreeNode struct {
-	Data        string
-	Left, Right *TreeNode
+	Data                string
+	Left, Right, Parent *TreeNode
 }
 
 func BTreeInsertData(root *TreeNode, data string) *TreeNode {
