@@ -19,20 +19,20 @@ package piscine
 // 	return root
 // }
 
-func BTreeApplyInorder(root *TreeNode, f func(...interface{}) (int, error)) {
-	if root != nil {
-		if root.Left != nil {
-			BTreeApplyInorder(root.Left, f)
-			// f(root.Left.Data)
-		}
-		f(root.Data)
+// func BTreeApplyInorder(root *TreeNode, f func(...interface{}) (int, error)) {
+// 	if root != nil {
+// 		if root.Left != nil {
+// 			BTreeApplyInorder(root.Left, f)
+// 			// f(root.Left.Data)
+// 		}
+// 		f(root.Data)
 
-		if root.Right != nil {
-			BTreeApplyInorder(root.Right, f)
-			// f(root.Right.Data)
-		}
-	}
-}
+// 		if root.Right != nil {
+// 			BTreeApplyInorder(root.Right, f)
+// 			// f(root.Right.Data)
+// 		}
+// 	}
+// }
 
 // func main() {
 // 	root := &TreeNode{Data: "4"}
