@@ -24,7 +24,7 @@ func BTreeMax(root *TreeNode) *TreeNode {
 		return root
 	}
 	for root.Right != nil {
-		root = root.Right
+		return BTreeMax(root.Right)
 	}
 	return root
 }
