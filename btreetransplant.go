@@ -1,7 +1,5 @@
 package piscine
 
-import "fmt"
-
 type TreeNode struct {
 	Data                string
 	Left, Right, Parent *TreeNode
@@ -83,13 +81,13 @@ func BTreeTransplant(root, node, rplc *TreeNode) *TreeNode {
 	return root
 }
 
-func main() {
-	root := &TreeNode{Data: "4"}
-	BTreeInsertData(root, "1")
-	BTreeInsertData(root, "7")
-	BTreeInsertData(root, "5")
-	node := BTreeSearchItem(root, "1")
-	rplc := &TreeNode{Data: "3"}
-	root = BTreeTransplant(root, node, rplc)
-	BTreeApplyInorder(root, fmt.Println)
-}
+// func main() {
+// 	root := &TreeNode{Data: "4"}
+// 	BTreeInsertData(root, "1")
+// 	BTreeInsertData(root, "7")
+// 	BTreeInsertData(root, "5")
+// 	node := BTreeSearchItem(root, "1")
+// 	rplc := &TreeNode{Data: "3"}
+// 	root = BTreeTransplant(root, node, rplc)
+// 	BTreeApplyInorder(root, fmt.Println)
+// }
