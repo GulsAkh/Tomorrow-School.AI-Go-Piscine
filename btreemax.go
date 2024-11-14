@@ -18,13 +18,10 @@ package piscine
 // }
 
 func BTreeMax(root *TreeNode) *TreeNode {
-	if root == nil {
-		return nil
+	if root == nil || root.Right == nil {
+		return root
 	}
-	if root.Right != nil {
-		return BTreeMax(root.Right)
-	}
-	return root
+	return BTreeMax(root.Right)
 }
 
 // func main() {
