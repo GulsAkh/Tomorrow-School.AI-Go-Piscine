@@ -2,10 +2,10 @@ package piscine
 
 // import "fmt"
 
-// type TreeNode struct {
-// 	Data                string
-// 	Left, Right, Parent *TreeNode
-// }
+type TreeNode struct {
+	Data                string
+	Left, Right, Parent *TreeNode
+}
 
 // func BTreeInsertData(root *TreeNode, data string) *TreeNode {
 // 	if root == nil {
@@ -26,27 +26,27 @@ package piscine
 // 	return root
 // }
 
-// func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
-// 	if root == nil {
-// 		return nil
-// 	}
+func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
+	if root == nil {
+		return nil
+	}
 
-// 	if root.Data == elem {
-// 		return root
-// 	}
-// 	if elem > root.Data {
-// 		if root.Right != nil {
-// 			root.Right.Parent = root
-// 		}
-// 		return BTreeSearchItem(root.Right, elem)
-// 	} else {
-// 		if root.Left != nil {
-// 			root.Left.Parent = root
-// 		}
-// 		return BTreeSearchItem(root.Left, elem)
-// 	}
-// 	return nil
-// }
+	if root.Data == elem {
+		return root
+	}
+	if elem > root.Data {
+		if root.Right != nil {
+			root.Right.Parent = root
+		}
+		return BTreeSearchItem(root.Right, elem)
+	} else {
+		if root.Left != nil {
+			root.Left.Parent = root
+		}
+		return BTreeSearchItem(root.Left, elem)
+	}
+	return nil
+}
 
 // func main() {
 // 	root := &TreeNode{Data: "4"}
