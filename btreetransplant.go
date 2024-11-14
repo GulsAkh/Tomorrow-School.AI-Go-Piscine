@@ -9,11 +9,18 @@ func BTreeInsertData(root *TreeNode, data string) *TreeNode {
 	if root == nil {
 		return &TreeNode{Data: data}
 	}
-
 	if data < root.Data {
-		root.Left = BTreeInsertData(root.Left, data)
+		if root.Left == nil {
+			root.Left = &TreeNode{Data: data, Parent: root}
+		} else {
+			BTreeInsertData(root.Left, data)
+		}
 	} else {
-		root.Right = BTreeInsertData(root.Right, data)
+		if root.Right == nil {
+			root.Right = &TreeNode{Data: data, Parent: root}
+		} else {
+			BTreeInsertData(root.Right, data)
+		}
 	}
 	return root
 }
@@ -22,62 +29,45 @@ func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 	if root == nil {
 		return nil
 	}
-
-	if root.Data == elem {
+	if elem == root.Data {
 		return root
 	}
-	if elem > root.Data {
-		if root.Right != nil {
-			root.Right.Parent = root
-		}
-		return BTreeSearchItem(root.Right, elem)
-	} else {
-		if root.Left != nil {
-			root.Left.Parent = root
-		}
+
+	if elem < root.Data {
 		return BTreeSearchItem(root.Left, elem)
+	} else {
+		return BTreeSearchItem(root.Right, elem)
 	}
-	return nil
 }
 
 func BTreeApplyInorder(root *TreeNode, f func(...interface{}) (int, error)) {
 	if root != nil {
 		if root.Left != nil {
 			BTreeApplyInorder(root.Left, f)
-			// f(root.Left.Data)
 		}
 		f(root.Data)
 
 		if root.Right != nil {
 			BTreeApplyInorder(root.Right, f)
-			// f(root.Right.Data)
 		}
 	}
 }
 
 func BTreeTransplant(root, node, rplc *TreeNode) *TreeNode {
-	if node == root {
+	if node.Parent == nil {
 		return rplc
 	}
-	current := root
-	for current != nil {
-		if current.Left == node {
-			current.Left = rplc
-			break
-		}
-
-		if current.Right == node {
-			current.Right = rplc
-			break
-		}
-
-		if node.Data < current.Data {
-			current = current.Left
-		} else {
-			current = current.Right
-		}
+	if node.Parent == nil {
+		return rplc
 	}
-
+	if node == node.Parent.Left {
+		node.Parent.Left = rplc
+	} else {
+		node.Parent.Right = rplc
+	}
+	if rplc != nil {
+		rplc.Parent = node.Parent
+	}
 	return root
 }
 
